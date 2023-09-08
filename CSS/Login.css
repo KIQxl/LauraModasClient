@@ -1,0 +1,52 @@
+:root{
+    --color-contrast :#D6909A;
+    --color-btn-hover: #E5ADC8;
+    --color-background: #23272a;
+    --color-details: #2c2f33;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+body{
+    background-color: var(--color-contrast);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+.container-login{
+    background-color: #fbeded99;
+    max-width: 23%;
+    height: 50vh;
+    margin: 10% auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 20px var(--color-details);
+}
+
+.form-login{
+    text-align: center;
+    width: 100%;
+}
+
+.form-login input{
+    background-color: transparent;
+    outline: none;
+    display: block;
+    padding: 5%;
+    width: 80%;
+    margin: auto;
+    border: none;
+    border-bottom: solid black 1px;
+}
+
+.input-container {
+    margin-bottom: 10%;
+}

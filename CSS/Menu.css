@@ -1,0 +1,95 @@
+:root{
+    --color-contrast :#D6909A;
+    --color-btn-hover: #E5ADC8;
+    --color-background: #23272a;
+    --color-details: #2c2f33;
+}   
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.cabecalho{
+    background-color: var(--color-contrast);
+    width: 100%;
+    margin-left: 60px;
+}
+
+
+nav.menu{
+    width: 50px;
+    height: 100%;
+    background-color: var(--color-details);
+    padding: 40px 0;
+    box-shadow: 3px 0 0 var(--color-contrast);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+nav.menu.ative{
+    width: 130px;
+}
+
+
+
+ul {
+    list-style-type: none;
+    height: 100%;
+}
+
+ul li.item-menu:hover {
+    background-color: var(--color-contrast);
+    transition: 0.7s;
+}
+
+ul li.item-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+ul li.item-menu{
+    padding: 17px;
+}
+
+ul li.item-menu > span {
+    color: #fff;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 20px;
+}
+
+@media(width < 920px){
+    nav.menu{
+        width: 40px;
+
+    }
+
+    ul li.item-menu a {
+        font-size: 12px;
+        padding: 10px 0;
+        gap: 7px;
+    }
+
+    ul li.item-menu a .txt-link{
+        margin-left: 5px;
+    }
+
+    nav.menu.ative{
+        width: 95px;
+    }
+    
+}

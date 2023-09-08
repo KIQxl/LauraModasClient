@@ -1,0 +1,33 @@
+:root{
+    --color-contrast :#D6909A;
+    --color-btn-hover: #E5ADC8;
+    --color-background: #23272a;
+    --color-details: #2c2f33;
+}
+
+.btn-add{
+    margin: 15px 0 0 15px;
+    padding: 10px 7px;
+    background-color: var(--color-contrast);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.btn-login{
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    margin-top: 15%;
+    width: 50%;
+    padding: 10px 7px;
+    background-color: var(--color-contrast);
+}
+
+.btn-login:hover{
+    background-color: var(--color-btn-hover);
+}
