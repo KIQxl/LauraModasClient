@@ -1,22 +1,51 @@
 :root{
     --color-contrast :#D6909A;
+    --cancel-color: red;
     --color-btn-hover: #E5ADC8;
     --color-background: #23272a;
     --color-details: #2c2f33;
 }
 
-.btn-add{
+.btn-add-main{
     margin: 15px 0 0 15px;
-    padding: 10px 7px;
+    padding: 20px 10px;
     background-color: var(--color-contrast);
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-add{
+    padding: 20px 10px;
+    background-color: var(--color-contrast);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-cancel{
+    padding: 20px 10px;
+    background-color: var(--cancel-color);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
 }
 
 .btn-add:hover{
     background-color: var(--color-btn-hover);
 }
+
+.btn-add-main:hover{
+    background-color: var(--color-btn-hover);
+}
+
+.btn-cancel:hover{
+    background-color: var(--color-btn-hover);
+}
+
 
 .btn-login{
     border-radius: 5px;

@@ -6,10 +6,13 @@
     <link href="../CSS/Menu.css" rel="stylesheet">
     <link href="../CSS/Main.css" rel="stylesheet">
     <link href="../CSS/Button.css" rel="stylesheet">
+    <link href="../CSS/Dialog.css" rel="stylesheet">
+    <link href="../CSS/Customers.css" rel="stylesheet">
     <title>Laura Modas - Customers</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="../JS/active-menu.js" defer></script>
+    <script src="../JS/open-modal.js" defer></script>
 </head>
 <body>
         <nav id="menu" class="menu">
@@ -58,10 +61,20 @@
         </nav>
 
         <main>
-            <button id="btn-add-customer" class="btn-add">
+            <button id="btn-add" class="btn-add-main">
                 <i class="bi bi-patch-plus-fill"></i>
                 <span>Novo Cliente</span>
             </button>
+
+            <dialog id="add-modal" class="modal-form">
+                <form class="customer-form" action="POST">
+                    <input type="text" name="Username" placeholder="Nome">
+                    <input type="text" name="Phone" placeholder="Telefone">
+
+                    <button class="btn-add">Cadastrar</button>
+                    <button class="btn-cancel" id="btn-cancel">Cancelar</button>
+                </form>
+            </dialog>
         </main>
 </body>
 </html>

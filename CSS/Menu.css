@@ -33,6 +33,7 @@ nav.menu{
     left: 0;
     overflow: hidden;
     transition: 1s;
+    font-family: 'Merriweather', serif;
 }
 
 nav.menu.ative{
