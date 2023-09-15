@@ -8,11 +8,14 @@
     <link href="../CSS/Button.css" rel="stylesheet">
     <link href="../CSS/Dialog.css" rel="stylesheet">
     <link href="../CSS/Customers.css" rel="stylesheet">
+    <link href="../CSS/Table.css" rel="stylesheet">
     <title>Laura Modas - Customers</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="../JS/active-menu.js" defer></script>
     <script src="../JS/open-modal.js" defer></script>
+    <script src="../JS/Logout.js" defer></script>
+    <script src="../JS/GetterCustomer.js" defer></script>
 </head>
 <body>
         <nav id="menu" class="menu">
@@ -49,7 +52,7 @@
                 </a>
             </li>
 
-            <li class="item-menu">
+            <li class="item-menu" id="btn-logout">
                 <a href="#">
                     <span class="icon">
                         <i class="bi bi-box-arrow-left"></i>
@@ -75,6 +78,23 @@
                     <button class="btn-cancel" id="btn-cancel">Cancelar</button>
                 </form>
             </dialog>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Numero de compras</th>
+                    <th>Numero de parcelas</th>
+                    <th>Valor da parcela</th>
+                    <th>Valor restante</th>
+                  </tr>
+                </thead>
+                <tbody id="customers">
+                          
+                </tbody>
+              </table>
         </main>
 </body>
 </html>

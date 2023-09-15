@@ -9,15 +9,18 @@
     <link rel="stylesheet" href="./CSS/Login.css">
     <link rel="stylesheet" href="./CSS/Button.css">
     <title>Laura Modas - Login</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./JS/Login.js" defer></script>
 </head>
 <body>
     <div class="container-login-page">     
         <section class="container-logo">
-            <img src="./Images/LauraModasLogo6.png" alt="">
+            <img src="./Images/LauraModasLogo6-removebg.png" alt="">
         </section>
 
         <section class="container-login">
-            <form class="form-login" action="POST">
+            <form class="form-login" id="form-login">
                 <div class="input-container">
                     <input type="text" name="username" placeholder="Login">
                 </div>

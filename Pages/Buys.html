@@ -7,11 +7,17 @@
     <link href="../CSS/Main.css" rel="stylesheet">
     <link href="../CSS/Button.css" rel="stylesheet">
     <link href="../CSS/Dialog.css" rel="stylesheet">
+    <link href="../CSS/Buys.css" rel="stylesheet">
+    <link href="../CSS/Table.css" rel="stylesheet">
     <title>Laura Modas - Buys</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../JS/active-menu.js" defer></script>
     <script src="../JS/open-modal.js" defer></script>
+    <script src="../JS/Logout.js" defer></script>
+    <script src="../JS/GetterBuy.js" defer></script>
+
 </head>
 <body>
         <nav id="menu" class="menu">
@@ -48,7 +54,7 @@
                 </a>
             </li>
 
-            <li class="item-menu">
+            <li class="item-menu" id="btn-logout">
                 <a href="#">
                     <span class="icon">
                         <i class="bi bi-box-arrow-left"></i>
@@ -66,14 +72,31 @@
             </button>
 
             <dialog id="add-modal" class="modal-form">
-                <form action="POST">
-                    <input type="text" name="Username" placeholder="Nome">
-                    <input type="text" name="Phone" placeholder="Telefone">
+                <form class="buy-form" action="POST">
+                    <input type="text" name="Name" placeholder="Produto">
+                    <input type="text" name="Value" placeholder="Valor">
+                    <input type="text" name="Description" placeholder="Descrição">
+                    <input type="text" name="CustomerModelId" placeholder="Cliente">
 
                     <button type="submit" class="btn-add">Cadastrar</button>
                     <button class="btn-cancel" id="btn-cancel">Cancelar</button>
                 </form>
             </dialog>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID da compra</th>
+                    <th>Nome do Produto</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th>Cliente</th>
+                  </tr>
+                </thead>
+                <tbody id="buys">
+                          
+                </tbody>
+              </table>
         </main>
 </body>
 </html>

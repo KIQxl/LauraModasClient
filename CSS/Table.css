@@ -1,0 +1,14 @@
+.table{
+    margin: auto;
+    padding: 10px;
+    margin-top: 4%;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.table td {
+    padding: 10px;
+    text-overflow:ellipsis;
+}

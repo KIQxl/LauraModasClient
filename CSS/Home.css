@@ -1,8 +1,7 @@
-.logo{
-    width: 100%;
-    height: 99vh;
+main{
+    text-align: center;
 }
 
 body{
-    background-color: #E5ADC8;
+    background: -webkit-linear-gradient(var(--color-contrast), var(--color-btn-hover));
 }

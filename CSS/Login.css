@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color: var(--color-btn-hover);
+    background: -webkit-linear-gradient(var(--color-contrast), var(--color-btn-hover));
 }
 
 .container-login-page{
@@ -36,7 +36,7 @@ body{
 }
 
 .container-login{
-    background-color: #fbeded99;
+    background-color: #fbeded10;
     width: 25%;
     height: 60vh;
     border-radius: 8px;

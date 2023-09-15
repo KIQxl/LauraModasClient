@@ -17,25 +17,29 @@
 }
 
 .btn-add{
-    padding: 20px 10px;
-    background-color: var(--color-contrast);
+    padding: 10px 25px;
+    background-color: var(--color-btn-hover);
     border-radius: 5px;
     border: none;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
+    margin-top: 10px;
+    color: #fff;
 }
 
 .btn-cancel{
-    padding: 20px 10px;
-    background-color: var(--cancel-color);
+    padding: 20px 25px;
+    background-color: var(--color-details);
     border-radius: 5px;
     border: none;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
+    margin-top: 10px;
+    color: #fff;
 }
 
 .btn-add:hover{
-    background-color: var(--color-btn-hover);
+    background-color: #ffdae5;
 }
 
 .btn-add-main:hover{
@@ -43,7 +47,7 @@
 }
 
 .btn-cancel:hover{
-    background-color: var(--color-btn-hover);
+    background-color: var(--color-background);
 }
 
 
@@ -58,5 +62,5 @@
 }
 
 .btn-login:hover{
-    background-color: var(--color-btn-hover);
+    background: -webkit-linear-gradient(var(--color-contrast), var(--color-btn-hover));
 }

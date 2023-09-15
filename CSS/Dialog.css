@@ -1,5 +1,25 @@
+:root{
+    --color-contrast :#D6909A;
+    --color-btn-hover: #E5ADC8;
+    --color-background: #23272a;
+    --color-details: #2c2f33;
+}
+
 .modal-form{
-    width: 50%;
-    height: 50vh;
+    width: 25%;
+    height: 60vh;
     margin: auto;
+    background: -webkit-linear-gradient(#b76e79, #ffc0cb);
+    border: none;
+    border-radius: 3px;
+
+}
+
+.modal-form > form > input{
+    display: block;
+    margin: 15px;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-details);
 }
