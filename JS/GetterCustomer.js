@@ -1,10 +1,10 @@
-const table = document.querySelector("#customers");
+const table_init = document.querySelector("#customers");
 
 GetCustomers();
 
 async function GetCustomers(){
 
-    const url = 'https://localhost:7191/v1/LauraModas/customers'
+    const url = 'https://localhost:7191/v1/LauraModas/Customers'
     const token = localStorage.getItem("token")
 
     const opts = {
@@ -18,14 +18,13 @@ async function GetCustomers(){
     const res = await fetch(url, opts);
 
     const customers = await res.json();
+    const customersAsc = customers.sort((a, b) => a.name.localeCompare(b.name));
 
-    console.log(customers);
-
-    RenderBuys(customers)
+    RenderCustomers(customersAsc)
 }
 
-function RenderBuys(customersList){
-    table.textContent = "";
+function RenderCustomers(customersList){
+    table_init.textContent = "";
 
     customersList.forEach(customer => {
 
@@ -35,11 +34,54 @@ function RenderBuys(customersList){
                 <td>${customer.name}</td>
                 <td>${customer.phone}</td>
                 <td>${customer.buys.length}</td>
-                <td>${customer.installment.numberOfInstallments}</td>
-                <td>${customer.installment.installmentValue.toFixed(2)}</td>
-                <td>${customer.installment.remainingValue.toFixed(2)}</td>
+                <td data-id="${customer.id}">
+                    <button class="btn-table" onclick=DisplayInstallments(${customer.id})>
+                        <i class="bi bi-search"></i>
+                    </button>
+                </td>
+                <td data-id="${customer.id}">
+                    <button class="btn-table" onclick="SetCustomer(${customer.id})">
+                    <i class="bi bi-gear-fill"></i>
+                    </button>
+                </td>
+                <td data-id="${customer.id}">
+                    <button type="button" class="btn-table" onclick="DeleteCustomer(${customer.id})">
+                    <i class="bi bi-x-square"></i>
+                    </button>
+                </td>
         </tr>`
 
-    table.innerHTML += html   
+    table_init.innerHTML += html   
     });
 }
+
+const input_search_customer = document.querySelector("#search-customer");
+
+input_search_customer.addEventListener("input", async (e)=>{
+    e.preventDefault();
+
+    const data_from_input = {
+        Name: input_search_customer.value
+    }
+
+    const url = `https://localhost:7191/v1/LauraModas/Customers/getCustomerByName`
+    const token = localStorage.getItem("token")
+
+    const opts = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(data_from_input)
+    };
+
+    const res = await fetch(url, opts);
+    const customers = await res.json();
+
+    const customersAsc = customers.sort((a, b) => a.name.localeCompare(b.name));
+
+    RenderCustomers(customersAsc)
+});
+
+

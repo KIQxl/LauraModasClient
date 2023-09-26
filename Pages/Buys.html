@@ -6,7 +6,6 @@
     <link href="../CSS/Menu.css" rel="stylesheet">
     <link href="../CSS/Main.css" rel="stylesheet">
     <link href="../CSS/Button.css" rel="stylesheet">
-    <link href="../CSS/Dialog.css" rel="stylesheet">
     <link href="../CSS/Buys.css" rel="stylesheet">
     <link href="../CSS/Table.css" rel="stylesheet">
     <title>Laura Modas - Buys</title>
@@ -17,6 +16,10 @@
     <script src="../JS/open-modal.js" defer></script>
     <script src="../JS/Logout.js" defer></script>
     <script src="../JS/GetterBuy.js" defer></script>
+    <script src="../JS/CreateBuy.js" defer></script>
+    <script src="../JS/SetBuy.js" defer></script>
+    <script src="../JS/DeleteBuy.js" defer></script>
+    <script src="../JS/DisplayBuy.js" defer></script>
 
 </head>
 <body>
@@ -37,6 +40,15 @@
             </li>
 
             <li class="item-menu">
+                <a href="./Customers.html">
+                    <span class="icon">
+                        <i class="bi bi-person"></i>
+                    </span>
+                    <span class="txt-link">Clientes</span>
+                </a>
+            </li>
+
+            <li class="item-menu">
                 <a href="./Buys.html">
                     <span class="icon">
                         <i class="bi bi-cart"></i>
@@ -45,14 +57,6 @@
                 </a>
             </li>
 
-            <li class="item-menu">
-                <a href="./Customers.html">
-                    <span class="icon">
-                        <i class="bi bi-person"></i>
-                    </span>
-                    <span class="txt-link">Clientes</span>
-                </a>
-            </li>
 
             <li class="item-menu" id="btn-logout">
                 <a href="#">
@@ -62,41 +66,60 @@
                     <span class="txt-link">Logout</span>
                 </a>
             </li>
-           </ul> 
+           </ul>
         </nav>
 
         <main>
-            <button id="btn-add" class="btn-add-main">
+            <button onclick="CustomersSelect()" type="button" id="btn-add" class="btn-add-main">
                 <i class="bi bi-bag-plus-fill"></i>
                 <span>Nova Venda</span>
             </button>
 
             <dialog id="add-modal" class="modal-form">
-                <form class="buy-form" action="POST">
+                <form class="buy-form" id="buy-form">
                     <input type="text" name="Name" placeholder="Produto">
                     <input type="text" name="Value" placeholder="Valor">
                     <input type="text" name="Description" placeholder="Descrição">
-                    <input type="text" name="CustomerModelId" placeholder="Cliente">
+                    <select name="CustomerModelId" id="select-customer">
 
-                    <button type="submit" class="btn-add">Cadastrar</button>
+                    </select>
+
+                    <button onclick="CreateBuy()" type="button" class="btn-add">Cadastrar</button>
                     <button class="btn-cancel" id="btn-cancel">Cancelar</button>
                 </form>
             </dialog>
 
             <table class="table">
                 <thead>
-                  <tr>
+                  <tr class="thead">
                     <th>ID da compra</th>
                     <th>Nome do Produto</th>
                     <th>Valor</th>
-                    <th>Descrição</th>
                     <th>Cliente</th>
+                    <th>
+                        <input id="search-buy" class="search-buy">
+                    </th>
                   </tr>
                 </thead>
-                <tbody id="buys">
-                          
+                <tbody class="tbody" id="buys">
+
                 </tbody>
               </table>
+
+              <!-- <dialog id="delete-buy-dialog">
+                <button type="button" onclick="DeleteBuy()">Excluir</button>
+                <button>Cancelar</button>
+              </dialog> -->
+
+              <dialog class="modal-form" id="set-buy">
+                <form class="buy-form" id="set-buy-form">
+                    <input type="text" name="setName" placeholder="Produto" required>
+                    <input type="text" name="setDescription" placeholder="Descrição" required>
+
+                    <button onclick="SendSetBuy()" type="button" class="btn-add">Cadastrar</button>
+                    <button type="submit" class="btn-cancel">Cancelar</button>
+                </form>
+              </dialog>
         </main>
 </body>
 </html>

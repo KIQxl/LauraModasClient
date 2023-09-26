@@ -1,5 +1,7 @@
 const form_login = document.querySelector("#form-login");
 const btn_login = document.querySelector("#btn-login");
+const popup_erro = document.querySelector("#popup-error-login");
+const close_modal_error_login = document.querySelector("#btn-close-modal");
 
 btn_login.addEventListener("click", (e)=> {
     e.preventDefault();
@@ -16,22 +18,34 @@ function login(form){
     const url = 'https://localhost:7191/v1/LauraModas/user/login'
     
     const opts = {
-        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(login)
     };
 
-    axios.post(url, login)
+    axios.post(url, login, opts)
         .then((res) => {
             localStorage.setItem("token", res.data.token);
 
             if(res.status === 200){
                 window.location.href = "../Pages/Home.html"
-            }
+            }      
         })
         .catch((error) => {
-            console.log(error);
+
+            const p_erro = document.querySelector("#error-message");
+
+            p_erro.innerHTML = error.message
+
+            popup_erro.showModal();
         });
 }
+
+close_modal_error_login.addEventListener("click", (e)=>{
+    
+    e.preventDefault();
+
+    popup_erro.close();
+
+    form_login.reset();
+});

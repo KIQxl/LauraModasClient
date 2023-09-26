@@ -1,14 +1,21 @@
 .table{
     margin: auto;
-    padding: 10px;
     margin-top: 4%;
     width: 80%;
     text-align: center;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 1px solid #ffffff;
+    border-spacing: 0px;
 }
 
 .table td {
     padding: 10px;
-    text-overflow:ellipsis;
+}
+
+.thead > th {
+    padding: 10px;
+}
+
+.table > tbody {
+    background:-webkit-linear-gradient(#D6909A, #E5ADC8) 
 }

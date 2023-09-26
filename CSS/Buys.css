@@ -7,3 +7,11 @@
     align-items: center;
     justify-content: center;
 }
+
+.buy-form > input, select {
+    width: 85%;
+}
+
+.search-buy{
+    width: 100%;
+}
