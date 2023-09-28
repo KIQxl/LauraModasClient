@@ -75,7 +75,7 @@
                 <span>Nova Venda</span>
             </button>
 
-            <dialog id="add-modal" class="modal-form">
+            <dialog id="add-modal" class="add-buy-modal">
                 <form class="buy-form" id="buy-form">
                     <input type="text" name="Name" placeholder="Produto">
                     <input type="text" name="Value" placeholder="Valor">
@@ -84,8 +84,16 @@
 
                     </select>
 
-                    <button onclick="CreateBuy()" type="button" class="btn-add">Cadastrar</button>
-                    <button class="btn-cancel" id="btn-cancel">Cancelar</button>
+                    <div class="buttons">
+                        <button onclick="CreateBuy()" type="button" class="btn add">
+                            <i class="bi bi-bag-plus-fill"></i>
+                            <span>Confirmar</span>
+                        </button>
+                        <button class="btn cancel" id="btn-cancel">
+                            <i class="bi bi-arrow-return-left"></i>
+                            <span>Voltar</span>
+                        </button>
+                    </div>
                 </form>
             </dialog>
 
@@ -97,7 +105,7 @@
                     <th>Valor</th>
                     <th>Cliente</th>
                     <th>
-                        <input id="search-buy" class="search-buy">
+                        <input id="search-buy" class="search-buy" placeholder="Pesquisar produto...">
                     </th>
                   </tr>
                 </thead>
@@ -111,15 +119,52 @@
                 <button>Cancelar</button>
               </dialog> -->
 
-              <dialog class="modal-form" id="set-buy">
+              <dialog class="set-buy-modal" id="set-buy-modal">
                 <form class="buy-form" id="set-buy-form">
                     <input type="text" name="setName" placeholder="Produto" required>
                     <input type="text" name="setDescription" placeholder="Descrição" required>
 
-                    <button onclick="SendSetBuy()" type="button" class="btn-add">Cadastrar</button>
-                    <button type="submit" class="btn-cancel">Cancelar</button>
+                    <div class="buttons">
+                        <button onclick="SendSetBuy()" type="button" class="btn add">
+                            <i class="bi bi-gear-fill"></i>
+                            <span>Alterar</span>
+                        </button>
+                        <button class="btn cancel" id="btn-cancel">
+                            <i class="bi bi-arrow-return-left"></i>
+                            <span>Voltar</span>
+                        </button>
+                    </div>
+                    
                 </form>
               </dialog>
+
+              <dialog class="show-buy-modal" id="show-buy-modal">
+                <form class="buy-form" id="show-buy-form">
+                    <label for="id">ID</label>
+                    <input type="text" name="id" readonly>
+
+                    <label for="nameProduct">Produto</label>
+                    <input type="text" name="nameProduct" readonly>
+
+                    <label for="value">Valor</label>
+                    <input type="text" name="value" readonly>
+
+                    <label for="date">Data</label>
+                    <input type="text" name="date" readonly>
+
+                    <label for="description">Descrição</label>
+                    <input type="text" name="description" readonly>
+
+                    <label for="customer">Cliente</label>
+                    <input type="text" name="customer" readonly>
+
+                    <button class="btn cancel" id="btn-cancel">
+                        <i class="bi bi-arrow-return-left"></i>
+                        <span>Voltar</span>
+                    </button>
+                </form>
+              </dialog>
+
         </main>
 </body>
 </html>

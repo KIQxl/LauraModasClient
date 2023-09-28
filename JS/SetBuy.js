@@ -1,4 +1,4 @@
-const modal_set_buy = document.querySelector("#set-buy");
+const modal_set_buy = document.querySelector("#set-buy-modal");
 const form_set_buy = document.querySelector("#set-buy-form");
 
 let setBuyId

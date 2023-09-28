@@ -16,38 +16,38 @@
     font-family: 'Lato', sans-serif;
 }
 
-.btn-add{
-    padding: 10px 25px;
-    background-color: var(--color-btn-hover);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
-    margin-top: 10px;
-    color: #fff;
-}
-
-.btn-cancel{
-    padding: 10px 25px;
-    background-color: var(--color-details);
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
-    margin-top: 10px;
-    color: #fff;
-}
-
-.btn-add:hover{
-    background-color: #ffdae5;
-}
-
 .btn-add-main:hover{
     background-color: var(--color-btn-hover);
 }
 
-.btn-cancel:hover{
-    background-color: var(--color-background);
+.btn{
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.parcel{
+    background-color: #137fd9;
+}
+
+.pay{
+    background-color: #4af970;
+}
+
+.cancel{
+    background-color: #ee0430;
+}
+
+.add{
+    background-color: #D6909A;;
+}
+
+.error{
+    background-color: #ee0430;
 }
 
 

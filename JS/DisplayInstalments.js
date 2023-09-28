@@ -70,3 +70,27 @@ async function Parcel(){
             alert(`Ops! Houve um erro ${installmentView.status}`)
         }
 }
+
+async function Pay(){
+    const customerId = installment_form.Id.value;
+
+    const url = `https://localhost:7191/v1/LauraModas/Installment/pay/${customerId}`
+    const token = localStorage.getItem("token")
+
+        const opts = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        };
+
+    const res = await axios.post(url,opts)
+
+    if(res.status === 200){
+        alert("Pagamento bem sucedido");
+        window.location.href = "../Pages/Customers.html";
+    }
+    else {
+        alert(`Ops! Houve um erro ${res.status}`)
+    }
+}

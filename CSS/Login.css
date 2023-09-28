@@ -74,3 +74,17 @@ input::placeholder{
     margin-bottom: 10%;
     opacity: 50%;
 }
+
+.erro-login-modal{
+    margin: auto;
+    background: -webkit-linear-gradient(#b76e79, #ffc0cb);
+    border: none;
+    border-radius: 3px;
+    padding: 20px;
+    text-align: center;
+}
+
+.erro-login-modal > i, p{
+    color: #23272a;
+    margin: 5px 0;
+}

@@ -53,3 +53,31 @@ function RenderBuys(buysList){
     });
 }
 
+const input_search_buy = document.querySelector("#search-buy");
+
+input_search_buy.addEventListener("input", async (e)=>{
+    e.preventDefault();
+
+    const buyName = {
+        Name: input_search_buy.value
+    }
+
+    const url = `https://localhost:7191/v1/LauraModas/Buys/getBuyByName`
+    const token = localStorage.getItem("token")
+
+    const opts = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(buyName)
+    };
+
+    const res = await fetch(url, opts);
+    const buys = await res.json();
+
+    const buysAsc = buys.sort((a, b) => a.name.localeCompare(b.name));
+
+    RenderBuys(buysAsc)
+});

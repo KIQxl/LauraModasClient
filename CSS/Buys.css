@@ -6,12 +6,50 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: #fff;
 }
 
-.buy-form > input, select {
-    width: 85%;
+.buy-form > input, select{
+    margin: 10px 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    border-bottom: solid 1px;
+    width: 100%;
+    color: #fff;
+}
+
+.add-buy-modal{
+    margin: auto;
+    background: #2c2f33;
+    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #fff;
+}
+
+.set-buy-modal{
+    margin: auto;
+    background: #2c2f33;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+.show-buy-modal{
+    margin: auto;
+    background: #2c2f33;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding: 20px;
 }
 
 .search-buy{
     width: 100%;
+}
+
+.buttons{
+    margin: 20px 0;
+    text-align: center;
 }

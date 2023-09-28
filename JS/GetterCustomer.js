@@ -41,12 +41,12 @@ function RenderCustomers(customersList){
                 </td>
                 <td data-id="${customer.id}">
                     <button class="btn-table" onclick="SetCustomer(${customer.id})">
-                    <i class="bi bi-gear-fill"></i>
+                    <i class="bi bi-person-fill-gear"></i>
                     </button>
                 </td>
                 <td data-id="${customer.id}">
                     <button type="button" class="btn-table" onclick="DeleteCustomer(${customer.id})">
-                    <i class="bi bi-x-square"></i>
+                    <i class="bi bi-person-dash-fill"></i>
                     </button>
                 </td>
         </tr>`
