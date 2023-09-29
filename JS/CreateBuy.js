@@ -1,14 +1,33 @@
-const form_create_buy = document.querySelector("#buy-form");
+const form_create_buy = document.querySelector("#add-buy-form");
 const select_customer = document.querySelector("#select-customer");
+const btn_add_buy = document.querySelector("#btn-add-buy");
 
-function CreateBuy(){
+const btn_add_buy_modal = document.querySelector("#btn-add-buy-modal")
+const add_buy_modal = document.querySelector("#add-buy-modal")
+const closeModal = document.querySelector("#btn-cancel");
+
+btn_add_buy_modal.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    add_buy_modal.showModal();
+})
+
+closeModal.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    add_buy_modal.close();
+});
+
+btn_add_buy.addEventListener("submit", (e)=>{
+    e.preventDefault();
 
     CustomersSelect();
 
     const buy = DataBuy(form_create_buy);
 
     SendBuy(buy);
-}
+})
+
 
 function DataBuy(form){
 

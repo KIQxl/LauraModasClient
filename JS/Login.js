@@ -26,7 +26,7 @@ function login(form){
     axios.post(url, login, opts)
         .then((res) => {
             localStorage.setItem("token", res.data.token);
-
+            localStorage.setItem("user", res.data.user.userName);
             if(res.status === 200){
                 window.location.href = "../Pages/Home.html"
             }      

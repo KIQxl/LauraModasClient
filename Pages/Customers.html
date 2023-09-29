@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../JS/active-menu.js" defer></script>
-    <script src="../JS/open-modal.js" defer></script>
     <script src="../JS/Logout.js" defer></script>
     <script src="../JS/GetterCustomer.js" defer></script>
     <script src="../JS/CreateCustomer.js" defer></script>
@@ -69,21 +68,21 @@
      </nav>
 
         <main>
-            <button id="btn-add" class="btn-add-main">
+            <button id="btn-add-customer-modal" class="btn-add-main">
                 <i class="bi bi-person-plus-fill"></i>
                 <span>Novo Cliente</span>
             </button>
 
-            <dialog id="add-modal" class="add-customer-modal">
+            <dialog id="add-customer-modal" class="add-customer-modal">
                 <form class="customer-form" id="customer-form">
                     <input type="text" name="Name" placeholder="Nome" required>
                     <input type="text" name="Phone" placeholder="Telefone" required>
 
-                    <button onclick="CreateCustomer(this)" type="button" class="btn add">
+                    <button type="submit" class="btn add" id="btn-add-customer">
                         <i class="bi bi-person-plus-fill"></i>
                         <span>Cadastrar</span>
                     </button>
-                    <button class="btn cancel" id="btn-cancel">
+                    <button type="submit" class="btn cancel" id="btn-cancel">
                         <i class="bi bi-arrow-return-left"></i>
                         <span>Voltar</span>
                     </button>
@@ -112,11 +111,11 @@
                     <input type="text" name="setName" placeholder="Nome" required>
                     <input type="text" name="setPhone" placeholder="Telefone" required>
 
-                    <button onclick="SendSetCustomer()" type="button" class="btn add">
+                    <button type="submit" class="btn add" id="btn-set-customer">
                         <i class="bi bi-person-fill-gear"></i>
                         <span>Alterar</span>
                     </button>
-                    <button class="btn cancel" id="btn-cancel">
+                    <button class="btn cancel" id="btn-cancel-set-customer">
                         <i class="bi bi-arrow-return-left"></i>
                         <span>Voltar</span>
                     </button>

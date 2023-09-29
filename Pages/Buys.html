@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../JS/active-menu.js" defer></script>
-    <script src="../JS/open-modal.js" defer></script>
     <script src="../JS/Logout.js" defer></script>
     <script src="../JS/GetterBuy.js" defer></script>
     <script src="../JS/CreateBuy.js" defer></script>
@@ -70,22 +69,22 @@
         </nav>
 
         <main>
-            <button onclick="CustomersSelect()" type="button" id="btn-add" class="btn-add-main">
+            <button onclick="CustomersSelect()" type="button" id="btn-add-buy-modal" class="btn-add-main">
                 <i class="bi bi-bag-plus-fill"></i>
                 <span>Nova Venda</span>
             </button>
 
-            <dialog id="add-modal" class="add-buy-modal">
-                <form class="buy-form" id="buy-form">
-                    <input type="text" name="Name" placeholder="Produto">
-                    <input type="text" name="Value" placeholder="Valor">
-                    <input type="text" name="Description" placeholder="Descrição">
-                    <select name="CustomerModelId" id="select-customer">
+            <dialog id="add-buy-modal" class="add-buy-modal">
+                <form class="buy-form" id="add-buy-form">
+                    <input type="text" name="Name" placeholder="Produto" required>
+                    <input type="text" name="Value" placeholder="Valor" required>
+                    <input type="text" name="Description" placeholder="Descrição" required>
+                    <select name="CustomerModelId" id="select-customer" required>
 
                     </select>
 
                     <div class="buttons">
-                        <button onclick="CreateBuy()" type="button" class="btn add">
+                        <button type="submit" class="btn add" id="btn-add-buy">
                             <i class="bi bi-bag-plus-fill"></i>
                             <span>Confirmar</span>
                         </button>
@@ -125,11 +124,11 @@
                     <input type="text" name="setDescription" placeholder="Descrição" required>
 
                     <div class="buttons">
-                        <button onclick="SendSetBuy()" type="button" class="btn add">
+                        <button type="submit" class="btn add" id="btn-set-buy">
                             <i class="bi bi-gear-fill"></i>
                             <span>Alterar</span>
                         </button>
-                        <button class="btn cancel" id="btn-cancel">
+                        <button class="btn cancel" id="btn-cancel-set-buy">
                             <i class="bi bi-arrow-return-left"></i>
                             <span>Voltar</span>
                         </button>

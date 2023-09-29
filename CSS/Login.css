@@ -13,7 +13,10 @@
 }
 
 body{
-    background: -webkit-linear-gradient(var(--color-contrast), var(--color-btn-hover));
+    background-image: url(/Images/bg-login2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .container-login-page{
@@ -35,14 +38,14 @@ body{
 }
 
 .container-login{
-    background-color: #fbeded10;
+    background-color: #fbeded90;
     width: 25%;
     height: 60vh;
     border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 5px 20px var(--color-contrast);
+    box-shadow: 1px 1px 10px #fff;
 }
 
 .form-login{
@@ -72,7 +75,6 @@ input::placeholder{
 
 .input-container {
     margin-bottom: 10%;
-    opacity: 50%;
 }
 
 .erro-login-modal{

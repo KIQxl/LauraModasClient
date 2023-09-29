@@ -1,33 +1,13 @@
 const modal_set_customer = document.querySelector("#set-customer")
+const btn_set_customer = document.querySelector("#btn-set-customer")
 const set_customer_form = document.querySelector("#set-customer-form")
+const close_set_customer_modal = document.querySelector("#btn-cancel-set-customer");
 
 let setCustomerId;
 
-async function SetCustomer(id){
-    
-    modal_set_customer.showModal();
+btn_set_customer.addEventListener("submit", async (e)=>{
 
-    const url = `https://localhost:7191/v1/LauraModas/Customers/getCustomerById/${id}`
-    const token = localStorage.getItem("token")
-
-    const opts = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        },
-    };
-
-    const res = await fetch(url, opts)
-    const customer = await res.json();
-
-    set_customer_form.setName.value = customer.name;
-    set_customer_form.setPhone.value = customer.phone;
-
-    setCustomerId = id
-}
-
-async function SendSetCustomer(){
+    e.preventDefault();
 
     const settedCustomer = {
         Name: set_customer_form.setName.value,
@@ -53,4 +33,34 @@ async function SendSetCustomer(){
     } else {
         alert(`Houve um erro: ${res.data}`)
     }
+})
+
+async function SetCustomer(id){
+    
+    modal_set_customer.showModal();
+
+    const url = `https://localhost:7191/v1/LauraModas/Customers/getCustomerById/${id}`
+    const token = localStorage.getItem("token")
+
+    const opts = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+    };
+
+    const res = await fetch(url, opts)
+    const customer = await res.json();
+
+    set_customer_form.setName.value = customer.name;
+    set_customer_form.setPhone.value = customer.phone;
+
+    setCustomerId = id
 }
+
+close_set_customer_modal.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+    modal_set_customer.close();
+})

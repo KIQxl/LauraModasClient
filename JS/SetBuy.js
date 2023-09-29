@@ -1,5 +1,7 @@
 const modal_set_buy = document.querySelector("#set-buy-modal");
 const form_set_buy = document.querySelector("#set-buy-form");
+const btn_set_buy = document.querySelector("#btn-set-buy");
+const close_set_buy_modal = document.querySelector("#btn-cancel-set-buy");
 
 let setBuyId
 
@@ -27,7 +29,8 @@ async function SetBuy(id){
     setBuyId = id
 }
 
-async function SendSetBuy(){
+btn_set_buy.addEventListener("submit", async (e)=>{
+    e.preventDefault();
 
     const settedBuy = {
         Name: form_set_buy.setName.value,
@@ -53,4 +56,10 @@ async function SendSetBuy(){
     } else {
         alert(`Houve um erro: ${res.data}`)
     }
-}
+});
+
+close_set_buy_modal.addEventListener("click", (e)=>{
+
+    e.preventDefault();
+    modal_set_buy.close();
+})
