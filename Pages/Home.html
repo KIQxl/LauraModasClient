@@ -76,7 +76,7 @@
                     <span>Relatório</span>
                 </div>
 
-                <div class="admin-function">
+                <div onclick="ShowRecords()" class="admin-function">
                     <i class="bi bi-ticket-perforated-fill"></i>
                     <span>Registros</span>
                 </div>
@@ -92,23 +92,9 @@
                 </div>
             </section>
 
+            <!-- Relatórios -->
             <dialog class="reports-modal" id="reports-modal">
                 <div class="container-reports">
-                    <!-- <label>Data</label> -->
-                    <!-- <select>
-                        <option value="1">Janeiro</option>
-                        <option value="2">Fevereiro</option>
-                        <option value="3">Março</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Maio</option>
-                        <option value="6">Junho</option>
-                        <option value="7">Julho</option>
-                        <option value="8">Agosto</option>
-                        <option value="9">Setembro</option>
-                        <option value="10">Outubro</option>
-                        <option value="11">Novembro</option>
-                        <option value="12">Dezembro</option>
-                    </select> -->
 
                     <div class="search-container">
                         <form class="search-form" id="search-form">
@@ -144,6 +130,27 @@
                             <th id="totalValue"></th>
                         </tfoot>
                     </table>
+                </div>
+            </dialog>
+             
+            <!-- Registros -->
+            <dialog class="records-modal" id="records-modal">
+                <div class="container-records">
+
+                    <div class="search-container">
+                        <form class="search-form" id="search-form">
+                            <label for="initialDate">Data Início</label>
+                            <input type="date" name="initialDate" id="initialDate">
+
+                            <label for="finalDate">Data Final</label>
+                            <input type="date" name="finalDate" id="finalDate">
+
+                            <button class="btn add" id="btn-search-by-data-range">Buscar</button>
+                            <button class="btn cancel" id="btn-clear-table">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </dialog>
         </main>

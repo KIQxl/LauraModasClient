@@ -4,21 +4,23 @@
     --color-btn-hover: #E5ADC8;
     --color-background: #23272a;
     --color-details: #2c2f33;
+    --background-modal: #452c2e;
 }
 
 .btn-add-main{
     margin: 15px 0 0 15px;
     padding: 20px 10px;
-    background-color: var(--color-contrast);
+    background-color: #452c2e;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     color: #fff;
+    transition: .5s;
 }
 
 .btn-add-main:hover{
-    background-color: var(--color-btn-hover);
+    background-color: #907374;
 }
 
 .btn{
@@ -35,20 +37,45 @@
     background-color: #137fd9;
 }
 
+.parcel:hover{
+    transition: .2s;
+    background-color: #89BFEC;
+}
+
 .pay{
     background-color: #4af970;
+}
+
+.pay:hover{
+    transition: .2s;
+    background-color: #A4FCB7;
 }
 
 .cancel{
     background-color: #ee0430;
 }
 
+.cancel:hover{
+    transition: .2s;
+    background-color: #F68197;
+}
+
 .add{
-    background-color: #D6909A;;
+    background-color: #D6909A;
+}
+
+.add:hover{
+    transition: .2s;
+    background-color: #E6BCC2;
 }
 
 .error{
     background-color: #ee0430;
+}
+
+.error:hover{
+    transition: .2s;
+    background-color: #F68197;
 }
 
 
@@ -70,7 +97,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    color: #fff;
+    color: #452c2e;
 }
 
 .btn-cancel-error{

@@ -16,8 +16,8 @@
 
 .installment-customer-modal{
     margin: auto;
-    background: #2c2f33;
-    border: 1px solid #fff;
+    background: var(--background-modal);
+    border: none;
     border-radius: 3px;
     padding: 20px;
 }
@@ -59,10 +59,10 @@
 
 .add-customer-modal{
     margin: auto;
-    background: #2c2f33;
+    background: var(--background-modal);
     border-radius: 3px;
     padding: 20px;
-    border: 1px solid #fff;
+    border: none;
 }
 
 /* Modal alteração cliente */
@@ -70,10 +70,10 @@
 
 .set-customer-modal{
     margin: auto;
-    background: #2c2f33;
+    background: var(--background-modal);
     border-radius: 3px;
     padding: 20px;
-    border: 1px solid #fff;
+    border: none;
 }
 /* width: 50%;
 height: 50vh;
@@ -82,3 +82,19 @@ background: -webkit-linear-gradient(#b76e79, #ffc0cb);
 border: none;
 border-radius: 3px;
 font-size: 14px; */
+
+.container-table{
+    margin: 1% auto 0;
+    width: 90%;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.container-table::-webkit-scrollbar{
+    width: 2px;
+}
+
+.container-table::-webkit-scrollbar-thumb{
+    background-color:#452c2e;
+}
+

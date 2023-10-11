@@ -19,18 +19,22 @@
     color: #fff;
 }
 
+select{
+    background-color: var(--background-modal);
+}
+
 .add-buy-modal{
     margin: auto;
-    background: #2c2f33;
+    background: var(--background-modal);
     border-radius: 3px;
     padding: 20px;
-    border: 1px solid #fff;
+    border: none;
 }
 
 .set-buy-modal{
     margin: auto;
-    background: #2c2f33;
-    border: 1px solid #fff;
+    background: var(--background-modal);
+    border: none;
     border-radius: 3px;
     padding: 20px;
 }
@@ -38,8 +42,8 @@
 .show-buy-modal{
     width: 38%;
     margin: auto;
-    background: #2c2f33;
-    border: 1px solid #fff;
+    background: var(--background-modal);
+    border: none;
     border-radius: 3px;
     padding: 20px;
 }
@@ -87,4 +91,19 @@
     margin: 20px 0;
     text-align: center;
     display: block;
+}
+
+.container-table{
+    margin: 1% auto 0;
+    width: 90%;
+    height: 80vh;
+    overflow-y: scroll;
+}
+
+.container-table::-webkit-scrollbar{
+    width: 2px;
+}
+
+.container-table::-webkit-scrollbar-thumb{
+    background-color:#452c2e;
 }

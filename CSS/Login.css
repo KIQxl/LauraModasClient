@@ -1,10 +1,3 @@
-:root{
-    --color-contrast :#D6909A;
-    --color-btn-hover: #E5ADC8;
-    --color-background: #23272a;
-    --color-details: #2c2f33;
-}
-
 *{
     margin: 0;
     padding: 0;
@@ -13,7 +6,7 @@
 }
 
 body{
-    background-image: url(/Images/bg-login2.jpeg);
+    background-image: url(/Images/Background-RoseGold.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

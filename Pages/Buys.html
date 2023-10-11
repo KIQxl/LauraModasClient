@@ -82,7 +82,9 @@
                     <input type="date" name="DateOfPayment" placeholder="Data de pagamento" required>
                     <input type="text" name="NumberOfInstallments" placeholder="Numero de parcelas" required>
                     <select name="CustomerModelId" id="select-customer" required>
-
+                        <option selected disabled>
+                            Selecione o cliente
+                        </option>
                     </select>
 
                     <div class="buttons">
@@ -98,22 +100,24 @@
                 </form>
             </dialog>
 
-            <table class="table">
-                <thead>
-                  <tr class="thead">
-                    <th>ID da compra</th>
-                    <th>Nome do Produto</th>
-                    <th>Valor</th>
-                    <th>Cliente</th>
-                    <th>
-                        <input id="search-buy" class="search-buy" placeholder="Pesquisar produto...">
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="tbody" id="buys">
-
-                </tbody>
-              </table>
+            <div class="container-table">
+                <table class="table">
+                    <thead>
+                      <tr class="thead">
+                        <th>ID da compra</th>
+                        <th>Nome do Produto</th>
+                        <th>Valor</th>
+                        <th>Cliente</th>
+                        <th>
+                            <input id="search-buy" class="search-buy" placeholder="Pesquisar produto...">
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody class="tbody" id="buys">
+    
+                    </tbody>
+                  </table>
+            </div>
 
               <!-- <dialog id="delete-buy-dialog">
                 <button type="button" onclick="DeleteBuy()">Excluir</button>

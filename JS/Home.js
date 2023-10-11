@@ -66,6 +66,13 @@ btn_search_by_data_range.addEventListener("click", async (e)=>{
     }
 })
 
+const records_modal = document.querySelector("#records-modal");
+
+function ShowRecords(){
+
+    records_modal.showModal();
+}
+
 const btn_clear_table = document.querySelector("#btn-clear-table")
 
 btn_clear_table.addEventListener("click", (e) =>{
@@ -75,4 +82,6 @@ btn_clear_table.addEventListener("click", (e) =>{
     totalValueTh.innerHTML = '';
 
     reports_modal.close();
-})
+});
+
+

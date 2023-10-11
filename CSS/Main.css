@@ -8,7 +8,10 @@ main {
 }
 
 body{
-    background-color: var(--color-background);
+    background: url(../Images/Background-RoseGold2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     color: #fff;
     font-family: 'Lato', sans-serif;
 }

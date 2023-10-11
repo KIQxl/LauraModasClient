@@ -84,10 +84,10 @@ async function CustomersSelect(){
     const res = await fetch(url, opts);
     const customers = await res.json();
     const customersAsc = customers.sort((a, b) => a.name.localeCompare(b.name));
-   
-    select_customer.textContent = ''
+    
+    select_customer.innerHTML = '';
 
-     customersAsc.forEach(customer => {
+    customersAsc.forEach(customer => {
 
         let html = `<option value="${customer.id}">${customer.name}</option>`
 
