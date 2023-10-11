@@ -1,11 +1,4 @@
-:root{
-    --color-contrast :#D6909A;
-    --color-btn-hover: #E5ADC8;
-    --color-background: #23272a;
-    --color-details: #2c2f33;
-}   
-
-* {
+ * {
     margin: 0;
     padding: 0;
 }

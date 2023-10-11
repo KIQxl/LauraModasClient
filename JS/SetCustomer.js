@@ -5,7 +5,7 @@ const close_set_customer_modal = document.querySelector("#btn-cancel-set-custome
 
 let setCustomerId;
 
-btn_set_customer.addEventListener("submit", async (e)=>{
+btn_set_customer.addEventListener("click", async (e)=>{
 
     e.preventDefault();
 

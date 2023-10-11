@@ -18,7 +18,9 @@ async function GetBuys(){
     const res = await fetch(url, opts);
 
     const buys = await res.json();
-    RenderBuys(buys)
+    const buysAsc = buys.sort((a, b) => a.name.localeCompare(b.name));
+
+    RenderBuys(buysAsc)
 }
 
 function RenderBuys(buysList){
@@ -30,7 +32,7 @@ function RenderBuys(buysList){
             `<tr>
                 <td>${buy.id}</td>
                 <td>${buy.name}</td>
-                <td>${buy.value},00</td>
+                <td>${buy.value.toFixed(2)}</td>
                 <td>${buy.customerModel.name}</td>
                 <td data-id="${buy.id}">
                     <button class="btn-table" onclick=DisplayBuy(${buy.id})>

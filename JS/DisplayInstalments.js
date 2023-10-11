@@ -19,9 +19,10 @@ async function DisplayInstallments(id){
 
         const installment = await res.json();
 
-        showDataInstallment(installment)
+        showDataInstallment(installment);
+
     } catch(erro){
-        alert(`Ops, houve um problema, tente novamente. - ${erro}`)
+        alert(`Ops, houve um problema, tente novamente. - ${erro}`);
     }
     
 }
@@ -34,20 +35,22 @@ function showDataInstallment(installment){
     installment_form.Name.value = installment.customer.name;
     installment_form.Phone.value = installment.customer.phone;
     installment_form.NumberOfInstallments.value = installment.numberOfInstallments;
-    installment_form.InstallmentValue.value = installment.installmentValue;
-    installment_form.RemainingValue.value = installment.remainingValue;
-    installment_form.TotalValue.value = installment.totalValue;
-
-}
+    installment_form.InstallmentValue.value = `R$ ${installment.installmentValue.toFixed(2)}`;
+    installment_form.RemainingValue.value = `R$ ${installment.remainingValue.toFixed(2)}`;
+    installment_form.TotalValue.value = `R$ ${installment.totalValue.toFixed(2)}`;
+    installment_form.dateOfPayment.value = installment.dateOfPayment;
+};
 
 async function Parcel(){
 
     const customerId = installment_form.Id.value;
     const numberOfInstallments = installment_form.NumberOfInstallments.value;
+    const dateOfPayment = installment_form.dateOfPayment.value;
 
     const createInstallment = {
         CustomerId: customerId,
-        NumberOfInstallments: numberOfInstallments
+        NumberOfInstallments: numberOfInstallments,
+        DateOfPayment: dateOfPayment
     }
 
     const url = `https://localhost:7191/v1/LauraModas/Installment/parcel`
@@ -69,7 +72,7 @@ async function Parcel(){
         else {
             alert(`Ops! Houve um erro ${installmentView.status}`)
         }
-}
+};
 
 async function Pay(){
     const customerId = installment_form.Id.value;
@@ -93,4 +96,12 @@ async function Pay(){
     else {
         alert(`Ops! Houve um erro ${res.status}`)
     }
-}
+};
+
+const btn_cancel_show_customer = document.querySelector("#btn-cancel-show-customers");
+
+btn_cancel_show_customer.addEventListener("click", (e) =>{
+    e.preventDefault();
+
+    modal_installments.close();
+})

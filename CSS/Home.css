@@ -1,7 +1,67 @@
-main{
-    
+body{
+    background-color: #23272a;
 }
 
-body{
-    background: -webkit-linear-gradient(var(--color-contrast), var(--color-btn-hover));
+.user-container{
+    display: flex;
+    justify-content: end;
+    margin: 10px 40px 0px 0px;
+    gap: 5px;
+}
+
+.adm-container{
+    margin: 30px auto;
+    width: 60%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.admin-function{
+    width: 45%;
+    height: 45%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    cursor: pointer;
+    background:-webkit-linear-gradient(#D6909A, #E5ADC8);
+    border-radius: 10px;
+}
+
+.admin-function:hover{
+    background: #E5ADC899;
+}
+
+.admin-function i{
+    font-size: 50px;
+}
+
+.reports-modal{
+    margin: auto;
+    background: #2c2f33;
+    border-radius: 3px;
+    padding: 20px;
+    color: #fff;
+    border: none;
+}
+
+.search-form > input{
+    margin-right: 20px;
+    padding: 4px;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.reports-table{
+    width: 100%;    
+}
+
+.reports-table th{
+    padding: 10px;
+    border-bottom: 1px solid #fff;
 }

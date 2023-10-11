@@ -4,7 +4,7 @@ const btn_add_buy = document.querySelector("#btn-add-buy");
 
 const btn_add_buy_modal = document.querySelector("#btn-add-buy-modal")
 const add_buy_modal = document.querySelector("#add-buy-modal")
-const closeModal = document.querySelector("#btn-cancel");
+const closeModal = document.querySelector("#btn-cancel-add-buy");
 
 btn_add_buy_modal.addEventListener("click", (e)=>{
     e.preventDefault();
@@ -18,7 +18,7 @@ closeModal.addEventListener("click", (e) => {
     add_buy_modal.close();
 });
 
-btn_add_buy.addEventListener("submit", (e)=>{
+btn_add_buy.addEventListener("click", (e)=>{
     e.preventDefault();
 
     CustomersSelect();
@@ -35,6 +35,8 @@ function DataBuy(form){
         Name : form.Name.value,
         Value : form.Value.value,
         Description : form.Description.value,
+        DateOfPayment: form.DateOfPayment.value,
+        NumberOfInstallments: form.NumberOfInstallments.value,
         CustomerModelId : form.CustomerModelId.value
     };
 
@@ -61,6 +63,7 @@ async function SendBuy(buy){
         window.location.href = "../Pages/Buys.html"
     }
     else {
+        console.log(res)
         alert(`Ops! Houve um erro. -- código do erro: ${res.status}`)
     }
 }
@@ -91,3 +94,4 @@ async function CustomersSelect(){
         select_customer.innerHTML += html;
      })
 }
+

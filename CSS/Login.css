@@ -79,7 +79,7 @@ input::placeholder{
 
 .erro-login-modal{
     margin: auto;
-    background: -webkit-linear-gradient(#b76e79, #ffc0cb);
+    background-color: #2c2f33;
     border: none;
     border-radius: 3px;
     padding: 20px;
@@ -87,6 +87,6 @@ input::placeholder{
 }
 
 .erro-login-modal > i, p{
-    color: #23272a;
+    color: #fff;
     margin: 5px 0;
 }

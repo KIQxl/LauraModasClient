@@ -29,12 +29,13 @@ async function SetBuy(id){
     setBuyId = id
 }
 
-btn_set_buy.addEventListener("submit", async (e)=>{
+btn_set_buy.addEventListener("click", async (e)=>{
     e.preventDefault();
 
     const settedBuy = {
         Name: form_set_buy.setName.value,
-        Description: form_set_buy.setDescription.value
+        Description: form_set_buy.setDescription.value,
+        DateOfPayment: form_set_buy.setDateOfPayment.value
     }
 
     const url = `https://localhost:7191/v1/LauraModas/Buys/alterBuy/${setBuyId}`

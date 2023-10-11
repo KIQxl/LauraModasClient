@@ -16,9 +16,9 @@ closeModal.addEventListener("click", (e) => {
     add_customer_modal.close();
 });
 
-btn_add_customer.addEventListener("submit", (e)=>{
-    e.preventDefault();
+btn_add_customer.addEventListener("click", (e)=>{
 
+    e.preventDefault();
     const customer = DataCustomer(form_create_customer);
 
     SendCustomer(customer);

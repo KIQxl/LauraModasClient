@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../CSS/Menu.css" rel="stylesheet">
+    <link href="../CSS/Button.css" rel="stylesheet">
     <link href="../CSS/Main.css" rel="stylesheet">
+    <link href="../CSS/Table.css" rel="stylesheet">
     <link href="../CSS/Home.css" rel="stylesheet">
     <title>Laura Modas - Home</title>
 
@@ -61,8 +63,89 @@
      </nav>
 
         <main>
-            <span>Olá, </span>
-            <span id="userName"></span>
+            <div class="user-container">
+                <span>Olá, </span>
+                <span id="userName"></span>
+                <i class="bi bi-person-circle"></i>
+            </div>
+
+            <section class="adm-container">
+
+                <div onclick="ShowReports()" class="admin-function" id="admin-report">
+                    <i class="bi bi-file-earmark-fill"></i>
+                    <span>Relatório</span>
+                </div>
+
+                <div class="admin-function">
+                    <i class="bi bi-ticket-perforated-fill"></i>
+                    <span>Registros</span>
+                </div>
+
+                <div class="admin-function">
+                    <i class="bi bi-plus-slash-minus"></i>
+                    <span>Controle de produtos</span>
+                </div>
+
+                <div class="admin-function">
+                    <i class="bi bi-currency-dollar"></i>
+                    <span>Saldo</span>
+                </div>
+            </section>
+
+            <dialog class="reports-modal" id="reports-modal">
+                <div class="container-reports">
+                    <!-- <label>Data</label> -->
+                    <!-- <select>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Março</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select> -->
+
+                    <div class="search-container">
+                        <form class="search-form" id="search-form">
+                            <label for="initialDate">Data Início</label>
+                            <input type="date" name="initialDate" id="initialDate">
+
+                            <label for="finalDate">Data Final</label>
+                            <input type="date" name="finalDate" id="finalDate">
+
+                            <button class="btn add" id="btn-search-by-data-range">Buscar</button>
+                            <button class="btn cancel" id="btn-clear-table">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <table class="table reports-table">
+                        <thead>
+                          <tr class="thead">
+                            <th>Cliente</th>
+                            <th>Produto</th>
+                            <th>Data</th>
+                            <th>Valor restante</th>
+                          </tr>
+                        </thead>
+                        <tbody class="reports" id="reports">
+                                  
+                        </tbody>
+                        <tfoot>
+                            <th></th>
+                            <th></th>
+                            <th>Valor Total</th>
+                            <th id="totalValue"></th>
+                        </tfoot>
+                    </table>
+                </div>
+            </dialog>
         </main>
 </body>
 </html>

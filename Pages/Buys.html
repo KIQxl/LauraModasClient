@@ -79,6 +79,8 @@
                     <input type="text" name="Name" placeholder="Produto" required>
                     <input type="text" name="Value" placeholder="Valor" required>
                     <input type="text" name="Description" placeholder="Descrição" required>
+                    <input type="date" name="DateOfPayment" placeholder="Data de pagamento" required>
+                    <input type="text" name="NumberOfInstallments" placeholder="Numero de parcelas" required>
                     <select name="CustomerModelId" id="select-customer" required>
 
                     </select>
@@ -88,7 +90,7 @@
                             <i class="bi bi-bag-plus-fill"></i>
                             <span>Confirmar</span>
                         </button>
-                        <button class="btn cancel" id="btn-cancel">
+                        <button class="btn cancel" id="btn-cancel-add-buy">
                             <i class="bi bi-arrow-return-left"></i>
                             <span>Voltar</span>
                         </button>
@@ -122,6 +124,7 @@
                 <form class="buy-form" id="set-buy-form">
                     <input type="text" name="setName" placeholder="Produto" required>
                     <input type="text" name="setDescription" placeholder="Descrição" required>
+                    <input type="date" name="setDateOfPayment" placeholder="Data de Pagamento" required>
 
                     <div class="buttons">
                         <button type="submit" class="btn add" id="btn-set-buy">
@@ -139,28 +142,58 @@
 
               <dialog class="show-buy-modal" id="show-buy-modal">
                 <form class="buy-form" id="show-buy-form">
-                    <label for="id">ID</label>
-                    <input type="text" name="id" readonly>
+                    <div class="details-container">
+                        <div class="details">
+                            <label for="id">ID do produto</label>
+                            <input type="text" name="id" readonly>
+    
+                            <label for="nameProduct">Nome do produto</label>
+                            <input type="text" name="nameProduct" readonly>
+    
+                            <label for="description">Descrição</label>
+                            <input type="text" name="description" readonly>
+    
+                            <label for="customer">Cliente</label>
+                            <input type="text" name="customer" readonly>
+    
+                            <label for="date">Data da compra</label>
+                            <input type="text" name="date" readonly>    
+                        </div>
+    
+                        <div class="details">
 
-                    <label for="nameProduct">Produto</label>
-                    <input type="text" name="nameProduct" readonly>
+                            <label for="numberOfInstallments">Número de parcelas</label>
+                            <input type="text" name="numberOfInstallments">
 
-                    <label for="value">Valor</label>
-                    <input type="text" name="value" readonly>
+                            <label for="installmentValue">Valor da Parcela</label>
+                            <input type="text" name="installmentValue" readonly>
+                            
+                            <label for="remainingValue">Valor Restante</label>
+                            <input type="text" name="remainingValue" readonly>
 
-                    <label for="date">Data</label>
-                    <input type="text" name="date" readonly>
-
-                    <label for="description">Descrição</label>
-                    <input type="text" name="description" readonly>
-
-                    <label for="customer">Cliente</label>
-                    <input type="text" name="customer" readonly>
-
-                    <button class="btn cancel" id="btn-cancel">
-                        <i class="bi bi-arrow-return-left"></i>
-                        <span>Voltar</span>
-                    </button>
+                            <label for="value">Valor</label>
+                            <input type="text" name="value" readonly>
+                        
+    
+                            <label for="dateOfPayment">Data de pagamento</label>
+                            <input type="date" name="dateOfPayment">
+                        </div>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button onclick="PayBuy()" type="button" class="btn pay">
+                            <i class="bi bi-stripe"></i>
+                            <span>Pagar</span>
+                        </button>
+                        <button onclick="ParcelBuy()" type="button" class="btn parcel">
+                            <i class="bi bi-credit-card-fill"></i>
+                            <span>Parcelar</span>
+                        </button>
+                        <button class="btn cancel" id="btn-cancel-show-buy">
+                            <i class="bi bi-arrow-return-left"></i>
+                            <span>Voltar</span>
+                        </button>
+                    </div>
                 </form>
               </dialog>
 
