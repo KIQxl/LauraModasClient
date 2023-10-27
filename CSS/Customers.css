@@ -65,6 +65,11 @@
     border: none;
 }
 
+.container-add-modal, .container-set-modal{
+    display: flex;
+    gap: 10px;
+}
+
 /* Modal alteração cliente */
 
 
@@ -75,26 +80,58 @@
     padding: 20px;
     border: none;
 }
-/* width: 50%;
-height: 50vh;
-margin: auto;
-background: -webkit-linear-gradient(#b76e79, #ffc0cb);
-border: none;
-border-radius: 3px;
-font-size: 14px; */
 
 .container-table{
     margin: 1% auto 0;
-    width: 90%;
+    width: 96%;
     height: 80vh;
     overflow-y: scroll;
 }
 
 .container-table::-webkit-scrollbar{
     width: 2px;
+    height: 2px;
 }
 
 .container-table::-webkit-scrollbar-thumb{
     background-color:#452c2e;
 }
 
+@media(width < 700px){
+    .installment-customer-modal{
+        width: 80%;
+    }
+
+    .add-customer-modal, .set-customer-modal{
+        text-align: center;
+        width: 35%;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: auto;
+    }
+
+    .customer-form > input{
+        width: 100%;
+    }
+
+    .container-add-modal, .container-set-modal{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media(width < 500px){
+
+    .buttons{
+        width: 100%;
+    }
+    
+    .installment-details{
+        width: 40%;
+    }
+}

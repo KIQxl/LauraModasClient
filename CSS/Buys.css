@@ -7,7 +7,7 @@
     color: #fff;
 }
 
-.buy-form > input, select{
+.buy-form > input, select, textarea{
     margin: 10px 0;
     border: none;
     background-color: transparent;
@@ -17,6 +17,10 @@
     border-bottom: solid 1px;
     width: 100%;
     color: #fff;
+}
+
+textarea{
+    resize: vertical;
 }
 
 select{
@@ -46,6 +50,15 @@ select{
     border: none;
     border-radius: 3px;
     padding: 20px;
+}
+
+.show-buy-modal::-webkit-scrollbar{
+    width: 1px;
+    background-color: black;
+}
+
+.show-buy-modal::-webkit-scrollbar-thumb{
+    background-color: white;
 }
 
 .search-buy{
@@ -95,15 +108,45 @@ select{
 
 .container-table{
     margin: 1% auto 0;
-    width: 90%;
+    width: 96%;
     height: 80vh;
     overflow-y: scroll;
 }
 
 .container-table::-webkit-scrollbar{
     width: 2px;
+    height: 2px;
 }
 
 .container-table::-webkit-scrollbar-thumb{
     background-color:#452c2e;
+}
+
+@media(width < 700px){
+    .show-buy-modal{
+        width: 80%;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .details{
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px;
+        color: #fff;
+    }
+}
+
+@media(width < 500px){
+
+    .buttons{
+        padding: 5px 10px;
+    }
+
+    .details{
+        width: 40%;
+    }
 }

@@ -45,7 +45,7 @@ function DataBuy(form){
 
 async function SendBuy(buy){
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/postBuy`
+    const url = `${baseURL}/Buys/postBuy`
     const token = localStorage.getItem("token")
     const opts = {
         method: 'POST',
@@ -70,7 +70,7 @@ async function SendBuy(buy){
 
 
 async function CustomersSelect(){
-    const url = `https://localhost:7191/v1/LauraModas/Customers`
+    const url = `${baseURL}/Customers`
     const token = localStorage.getItem("token")
 
     const opts = {

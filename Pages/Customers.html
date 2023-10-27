@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../JS/baseURL.js"></script>
     <script src="../JS/active-menu.js" defer></script>
     <script src="../JS/Logout.js" defer></script>
     <script src="../JS/GetterCustomer.js" defer></script>
@@ -74,19 +75,25 @@
             </button>
 
             <dialog id="add-customer-modal" class="add-customer-modal">
-                <form class="customer-form" id="customer-form">
-                    <input type="text" name="Name" placeholder="Nome" required>
-                    <input type="text" name="Phone" placeholder="Telefone" required>
+                <div class="container-add-modal">
+                    <form class="customer-form" id="customer-form">
 
-                    <button type="submit" class="btn add" id="btn-add-customer">
-                        <i class="bi bi-person-plus-fill"></i>
-                        <span>Cadastrar</span>
-                    </button>
-                    <button type="submit" class="btn cancel" id="btn-cancel">
-                        <i class="bi bi-arrow-return-left"></i>
-                        <span>Voltar</span>
-                    </button>
-                </form>
+                        <input type="text" name="Name" placeholder="Nome" required>
+                        <input type="text" name="Phone" placeholder="Telefone" required>
+    
+                    </form>
+    
+                    <div class="buttons">
+                        <button type="submit" class="btn add" id="btn-add-customer">
+                            <i class="bi bi-person-plus-fill"></i>
+                            <span>Cadastrar</span>
+                        </button>
+                        <button type="submit" class="btn cancel" id="btn-cancel">
+                            <i class="bi bi-arrow-return-left"></i>
+                            <span>Voltar</span>
+                        </button>
+                    </div>
+                </div>
             </dialog>
 
             <div class="container-table">
@@ -96,7 +103,9 @@
                         <th>ID</th>
                         <th>Nome</th>
                         <th>Telefone</th>
-                        <th>Numero de compras</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                         <th>
                             <input id="search-customer" class="search-customer" placeholder="Pesquisar cliente...">
                         </th>
@@ -109,19 +118,25 @@
             </div>
 
             <dialog class="set-customer-modal" id="set-customer">
-                <form class="customer-form" id="set-customer-form">
-                    <input type="text" name="setName" placeholder="Nome" required>
-                    <input type="text" name="setPhone" placeholder="Telefone" required>
+               <div class="container-set-modal">
+                    <form class="customer-form" id="set-customer-form">
 
-                    <button type="submit" class="btn add" id="btn-set-customer">
-                        <i class="bi bi-person-fill-gear"></i>
-                        <span>Alterar</span>
-                    </button>
-                    <button class="btn cancel" id="btn-cancel-set-customer">
-                        <i class="bi bi-arrow-return-left"></i>
-                        <span>Voltar</span>
-                    </button>
-                </form>
+                        <input type="text" name="setName" placeholder="Nome" required>
+                        <input type="text" name="setPhone" placeholder="Telefone" required>
+
+                    </form>
+
+                    <div class="buttons">
+                        <button type="submit" class="btn add" id="btn-set-customer">
+                            <i class="bi bi-person-fill-gear"></i>
+                            <span>Alterar</span>
+                        </button>
+                        <button class="btn cancel" id="btn-cancel-set-customer">
+                            <i class="bi bi-arrow-return-left"></i>
+                            <span>Voltar</span>
+                        </button>
+                    </div>
+               </div>
             </dialog>
 
             <dialog class="installment-customer-modal" id="show-installments">

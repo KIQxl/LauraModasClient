@@ -4,7 +4,7 @@ const show_buy_form = document.querySelector("#show-buy-form");
 async function DisplayBuy(id){
     show_buy_modal.showModal();
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/getBuy/${id}`
+    const url = `${baseURL}/Buys/getBuy/${id}`
     const token = localStorage.getItem("token")
 
     const opts = {
@@ -33,7 +33,7 @@ async function DisplayBuy(id){
 async function PayBuy(){
     const buyId = show_buy_form.id.value;
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/payBuy/${buyId}`
+    const url = `${baseURL}/Buys/payBuy/${buyId}`
     const token = localStorage.getItem("token")
     const opts = {
         method: 'POST',
@@ -62,7 +62,7 @@ async function ParcelBuy(){
         DateOfPayment: show_buy_form.dateOfPayment.value
     }
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/parcelBuy`
+    const url = `${baseURL}/Buys/parcelBuy`
     const token = localStorage.getItem("token")
     const opts = {
         method: 'POST',

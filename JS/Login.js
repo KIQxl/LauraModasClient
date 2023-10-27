@@ -15,7 +15,7 @@ function login(form){
         Password : form.password.value
     }
     
-    const url = 'https://localhost:7191/v1/LauraModas/user/login'
+    const url = `${baseURL}/user/login`
     
     const opts = {
         headers: {
@@ -25,6 +25,9 @@ function login(form){
 
     axios.post(url, login, opts)
         .then((res) => {
+            localStorage.removeItem("token")
+            localStorage.removeItem("user")
+
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user", res.data.user.userName);
             if(res.status === 200){

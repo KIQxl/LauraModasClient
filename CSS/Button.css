@@ -116,3 +116,9 @@
 .btn-cancel-error:hover{
     background-color:#23272a;
 }
+
+@media(width < 500px){
+    .btn{
+        padding: 5px 10px;
+    }
+}

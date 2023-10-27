@@ -15,3 +15,9 @@ body{
     color: #fff;
     font-family: 'Lato', sans-serif;
 }
+
+@media(width < 700px){
+    *{
+        font-size: 12px;
+    }
+}

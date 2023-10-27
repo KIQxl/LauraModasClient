@@ -1,6 +1,6 @@
 async function DeleteCustomer(id){
     
-    const url = `https://localhost:7191/v1/LauraModas/Customers/deleteCustomer/${id}`
+    const url = `${baseURL}/Customers/deleteCustomer/${id}`
     const token = localStorage.getItem("token")
     const opts = {
         headers: {

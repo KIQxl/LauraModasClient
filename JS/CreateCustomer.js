@@ -25,7 +25,7 @@ btn_add_customer.addEventListener("click", (e)=>{
 })
 
 async function SendCustomer(customer){
-    const url = `https://localhost:7191/v1/LauraModas/Customers/postCustomer`
+    const url = `${baseURL}/Customers/postCustomer`
 
     const token = localStorage.getItem("token")
     const opts = {

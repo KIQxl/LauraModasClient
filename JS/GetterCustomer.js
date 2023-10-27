@@ -4,7 +4,7 @@ GetCustomers();
 
 async function GetCustomers(){
 
-    const url = 'https://localhost:7191/v1/LauraModas/Customers'
+    const url = `${baseURL}/Customers`
     const token = localStorage.getItem("token")
 
     const opts = {
@@ -33,7 +33,6 @@ function RenderCustomers(customersList){
                 <td>${customer.id}</td>
                 <td>${customer.name}</td>
                 <td>${customer.phone}</td>
-                <td>${customer.buys.length}</td>
                 <td data-id="${customer.id}">
                     <button class="btn-table" onclick=DisplayInstallments(${customer.id})>
                         <i class="bi bi-search"></i>
@@ -45,10 +44,11 @@ function RenderCustomers(customersList){
                     </button>
                 </td>
                 <td data-id="${customer.id}">
-                    <button type="button" class="btn-table" onclick="DeleteCustomer(${customer.id})">
+                    <button type="button" class="btn-table" ondblclick="DeleteCustomer(${customer.id})">
                     <i class="bi bi-person-dash-fill"></i>
                     </button>
                 </td>
+                <td></td>
         </tr>`
 
     table_init.innerHTML += html   
@@ -64,7 +64,7 @@ input_search_customer.addEventListener("input", async (e)=>{
         Name: input_search_customer.value
     }
 
-    const url = `https://localhost:7191/v1/LauraModas/Customers/getCustomerByName`
+    const url = `${baseURL}/Customers/getCustomerByName`
     const token = localStorage.getItem("token")
 
     const opts = {

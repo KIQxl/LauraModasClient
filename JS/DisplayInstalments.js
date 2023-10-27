@@ -4,7 +4,7 @@ const installment_form = document.querySelector("#installment-form");
 async function DisplayInstallments(id){
 
     try{
-        const url = `https://localhost:7191/v1/LauraModas/Installment/getInstallment/${id}`
+        const url = `${baseURL}/Installment/getInstallment/${id}`
         const token = localStorage.getItem("token")
 
         const opts = {
@@ -53,7 +53,7 @@ async function Parcel(){
         DateOfPayment: dateOfPayment
     }
 
-    const url = `https://localhost:7191/v1/LauraModas/Installment/parcel`
+    const url = `${baseURL}/Installment/parcel`
     const token = localStorage.getItem("token")
 
         const opts = {
@@ -77,7 +77,7 @@ async function Parcel(){
 async function Pay(){
     const customerId = installment_form.Id.value;
 
-    const url = `https://localhost:7191/v1/LauraModas/Installment/pay/${customerId}`
+    const url = `${baseURL}/Installment/pay/${customerId}`
     const token = localStorage.getItem("token")
 
         const opts = {

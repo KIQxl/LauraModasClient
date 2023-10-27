@@ -10,14 +10,21 @@
 }
 
 .table td {
-    padding: 10px;
+    padding: 1%;
+    width: 13%;
 }
 
 .thead > th {
-    padding: 10px;
+    padding: 1%;
 }
 
 .table > tbody {
     background-color: #e7eae7;
     color: #2c2f33;
+}
+
+@media(width < 500px){
+    .table{
+        font-size: 12px;
+    }
 }

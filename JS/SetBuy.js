@@ -9,7 +9,7 @@ async function SetBuy(id){
     
     modal_set_buy.showModal();
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/getBuy/${id}`
+    const url = `${baseURL}/Buys/getBuy/${id}`
     const token = localStorage.getItem("token")
 
     const opts = {
@@ -23,8 +23,9 @@ async function SetBuy(id){
     const res = await fetch(url, opts)
     const buy = await res.json();
 
-    form_set_buy.setName.value = buy.name
-    form_set_buy.setDescription.value = buy.description
+    form_set_buy.setName.value = buy.name;
+    form_set_buy.setDescription.value = buy.description;
+    form_set_buy.setDateOfPayment.value = buy.dateOfPayment;
     
     setBuyId = id
 }
@@ -38,7 +39,7 @@ btn_set_buy.addEventListener("click", async (e)=>{
         DateOfPayment: form_set_buy.setDateOfPayment.value
     }
 
-    const url = `https://localhost:7191/v1/LauraModas/Buys/alterBuy/${setBuyId}`
+    const url = `${baseURL}/Buys/alterBuy/${setBuyId}`
     const token = localStorage.getItem("token")
 
     const opts = {
