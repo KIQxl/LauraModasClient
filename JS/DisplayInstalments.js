@@ -81,13 +81,14 @@ async function Pay(){
     const token = localStorage.getItem("token")
 
         const opts = {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
         };
 
-    const res = await axios.post(url,opts)
+    const res = await fetch(url,opts)
 
     if(res.status === 200){
         alert("Pagamento bem sucedido");

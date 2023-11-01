@@ -1,2 +1,2 @@
-const baseURL = "lauramodas-project.azurewebsites.net/v1/LauraModas";
+const baseURL = "https://localhost:7191/v1/LauraModas";
 
